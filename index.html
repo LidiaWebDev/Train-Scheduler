@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Train-sceduler</title>
+    <!-- Bootstrap connected -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <!-- google fonts connected -->
+    <link href ="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
+    <!-- reset css connected -->
+    <link rel="stylesheet" type="text/css" href="assets/Css/reset.css" />
+    <!-- local css connected -->
+    <link rel="stylesheet" type="text/css" href="assets/Css/style.css" />
+    <!-- materialize connected -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   
+    </head>
+  
+  <body>
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-1"></div>
+       
+        <div class="col-10">
+            <div class="jumbotron jumbotron-fluid">
+            <div class="momentcontainer">
+              <div id="momenttd">November 16th 2018, 7:36:00 pm</div>
+            </div>
+          <h1 class="display-4">Train Timetables</h1>
+              <p class="lead">Will add some information on that later</p>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    
+        </div>
+      </div>
+       
+<div class="container2 ">
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <!-- Column that show the current train schedule -->
+
+              <div class="card border-success mb-3">
+                <div class="card-header bg-success">Current Train Schedule</div>
+
+                <div class="table-responsive">
+                  <table class="table table-hover" id="trainTable">
+                    <thead>
+                      
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency (min)</th>
+                        <th>New arrival</th>
+                        <th>Minutes away</th>
+                      
+                    </thead>
+                    <tbody id="newTrains">
+                      <tr>
+                          <td><h6 id="name-display">Lidia</h6></td>
+                          <td><h6 id="text-display">Los Angeles</h6></td>
+                          <td><h6 id="time-display">12:00</h6></td>
+                          <td><h6 id="arrival-display">12:12</h6></td>
+                          <td><h6 id="minutes-display">20</h6></td>
+                      </tr>
+                    </tbody>
+                    
+                    <!-- <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td><h6 id="name-display">Rosetta</h6></td>
+                        <td><h6 id="text-display">Houston</h6></td>
+                        <td><h6 id="time-display">15:00PM</h6></td></td>
+                        <td><h6 id="minutes-display">20 min</h6></td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>2</td>
+                        <td>e</td>
+                        <td>w</td>
+                        <td>w</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>2</td>
+                        <td>e</td>
+                        <td>w</td>
+                        <td>w</td>
+                      </tr> -->
+                      
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+      <div class="col-1"></div>
+
+      <div class="container3">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <div class="card border-success mb-3">
+              <div class="card-header bg-success">Add train</div>
+
+              <form>
+                <div class="form-group">
+                  <label for="name-input">Train Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name-input"
+                    aria-describedby="name"
+                    placeholder="Train Name"
+                  />
+                </div>
+                
+                <div class="form-group">
+                  <label for="address">Destination</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="text-input"
+                    placeholder="Destination"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="trainTime"
+                    >First Train Time (HH:mm - military time)
+                  </label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="time-input"
+                    placeholder="Enter time"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="minutes">Frequency(min) </label>
+                  <input
+                    type ="number"
+                    class="form-control"
+                    id="minutes-input"
+                    aria-describedby="frequency"
+                  />
+                </div>
+                <button type="submit" class="btn btn-success" id="add-train">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" src="assets/Javascript/javascript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+</body> 
+</html>
+
+
+
